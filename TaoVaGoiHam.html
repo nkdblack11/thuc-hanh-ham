@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và gọi hàm</title>
+</head>
+<body>
+<script language="JavaScript">
+    function hienthi(yes) {
+        let result = '';
+        if (yes){
+            result = 'Tôi sẽ chơi một ván';
+        } else {
+            result = 'Để sau nhé ';
+        }
+        return  result
+    }
+    let game = confirm('Bạn có mốn chơi 1 ván cờ ko');
+    let cautraloi = hienthi(game);
+    alert(cautraloi);
+</script>
+</body>
+</html>

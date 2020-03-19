@@ -7,17 +7,19 @@
 <body>
 <script language="JavaScript">
 
-    function tinhMin(array0) {
-        let min = array0[0]
-        for (let i = 0; i <= array0.length; i++) {
-            if (array0[i] < min) {
-                min = array0[i]
+    function tinhMin(n) {
+        let min = n[0]
+        if(n.length == 0)
+            return 'Chuỗi rỗng'
+        for (let i = 0; i <= n.length; i++) {
+            if (n[i] < min) {
+                min = n[i]
             }
         }
         return min
     }
-
     let array1 = [-11, 2, 8];
+    let array2 = [];
     let min = tinhMin(array1)
     document.write('Giá trị min là: ' + min)
 </script>

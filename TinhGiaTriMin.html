@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá trị min của hàm</title>
+</head>
+<body>
+<script language="JavaScript">
+
+    function tinhMin(array0) {
+        let min = array0[0]
+        for (let i = 0; i <= array0.length; i++) {
+            if (array0[i] < min) {
+                min = array0[i]
+            }
+        }
+        return min
+    }
+
+    let array1 = [-11, 2, 8];
+    let min = tinhMin(array1)
+    document.write('Giá trị min là: ' + min)
+</script>
+</body>
+</html>

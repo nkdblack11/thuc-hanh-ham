@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+    <script language="JavaScript">
+        function footToMeter(foot){
+            let meter = 0
+            meter = 0.305 * foot
+            return meter;
+        }
+        function meterToFoot(meter){
+            let foot = 0
+            foot = 3.297 * meter
+            return foot;
+        }
+    </script>
+</head>
+<body>
+footToMeter <input id="foot" type="text"/>
+<button type="button" onclick="xuat.innerHTML=footToMeter(foot.value)">Click</button>
+<div id="xuat"></div>
+meterToFoot <input id="meter" type="text"/>
+<button type="button" onclick="xuat1.innerHTML=meterToFoot(meter.value)">Click</button>
+<div id="xuat1"></div>
+
+</body>
+</html>

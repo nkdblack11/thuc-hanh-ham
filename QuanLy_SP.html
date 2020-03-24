@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm</title>
+</head>
+<body>
+<h2>Ứng dụng quản lý sản phẩm</h2>
+<input id="text" type="text" style="color: blue"/>
+<button type="button" onclick="Add()" style='background: greenyellow'>Add</button>
+<h3 style="color: blue">Display Add The Product</h3>
+<div id="xuat"></div>
+<script>
+    let arr = new Array();
+
+    function Add() {
+        let a = document.getElementById('text').value;
+        if (a === '') {
+            alert('Bạn cần nhập tên sản phẩm')
+        } else {
+            arr.push(a)
+            document.getElementById('text').value = "";
+            disPlay()
+        }
+    }
+
+    function disPlay() {
+        let a = "<table>";
+        for (i = 0; i < arr.length; i++) {
+            a = a + '<tr style="width: 500px">'
+            a = a + "<td id='product" + i + "' style='width: 200px'>" + arr[i] + '</td>' +
+                "<td style=\"width: 50px\"><button onclick='editProduct(" + i + ")' style='background: greenyellow'>edit</button></td>" +
+                "<td style=\"width: 50px\"><button onclick='deleteProduct(" + i + ")' style='background: greenyellow'>delete</button></td>";
+            a = a + '</tr>'
+        }
+        a = a + "</table>";
+        document.getElementById("xuat").innerHTML = a;
+    }
+
+    function deleteProduct(position) {
+        arr.splice(position, 1);
+        disPlay();
+    }
+
+    function editProduct(position) {
+        let edit = "<input id='productName" + position + "'/>" +
+            "<button type='button' value='Save' onclick='saveNewName(" + position + ")'>Save</button>"
+        document.getElementById("product" + position + "").innerHTML = edit;
+    }
+
+    function saveNewName(position) {
+        let newName = document.getElementById("productName" + position + "").value;
+        arr[position] = newName;
+        disPlay();
+    }
+</script>
+</body>
+</html>
